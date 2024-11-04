@@ -11,6 +11,8 @@ class Hotel extends Model
         'email',
         'address',
         'phone',
-        'star'
+        'star',
+        'check_in_time',
+        'checkout_time'
     ];
 }

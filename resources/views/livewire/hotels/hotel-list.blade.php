@@ -2,14 +2,7 @@
     <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Blank Page</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Pages</li>
-          <li class="breadcrumb-item active">Blank</li>
-        </ol>
-      </nav>
+      <h1>Hotels</h1>
     </div><!-- End Page Title -->
 
     <section class="section">
@@ -45,6 +38,7 @@
                     <th scope="col">Check in time</th>
                     <th scope="col">Checkout time</th>
                     <th scope="col">Star</th>
+                    <th scope="col">Edit</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -57,6 +51,10 @@
                     <td>{{ $hotel->check_in_time }}</td>
                     <td>{{ $hotel->checkout_time }}</td>
                     <td>{{ $hotel->star }}</td>
+                    <td class="d-flex gap-1">
+                      <a wire:navigate href="{{ route('hotel.update',$hotel->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                      <a wire:navigate href="" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
                   </tr>
                   @endforeach
                 </tbody>

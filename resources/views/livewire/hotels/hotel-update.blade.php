@@ -2,11 +2,11 @@
     <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Add Hotel</h1>
+      <h1>Update Hotel Info</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a wire:navigate href="{{ route('hotel.list') }}">Hotels</a></li>
-          <li class="breadcrumb-item active"><a wire:navigate href="{{ route('hotel.create') }}">Add</a></li>
+          <li class="breadcrumb-item active"><a wire:navigate href="{{ route('hotel.create') }}">Update</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -17,9 +17,9 @@
           <div class="card">
             <div class="card-body">
                 <div class="card-title">
-                    <h4 class="h4">Insert a Hotel</h4>
+                    <h4 class="h4">Update a Hotel</h4>
                 </div>
-              <form wire:submit.prevent='create' class="row g-3" method="POST" autocomplete="off">
+              <form wire:submit.prevent='update' class="row g-3" method="POST" autocomplete="off">
                 @csrf
                 <div class="col-md-12">
                   <div class="form-floating">
