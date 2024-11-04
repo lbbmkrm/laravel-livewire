@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class HotelSeeder extends Seeder
 {
@@ -12,6 +13,12 @@ class HotelSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        DB::table('hotels')->insert([
+            'name' => 'RedDoorz',
+            'email' => 'red@doorz.com',
+            'address' => 'Medan',
+            'phone' => fake()->phoneNumber(),
+            'star' => 4
+        ]);
     }
 }

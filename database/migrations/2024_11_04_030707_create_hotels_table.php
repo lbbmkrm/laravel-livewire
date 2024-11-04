@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('hotels', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100)->nullable(false);
-            $table->string('email', 100)->nullable(false);
+            $table->string('email', 100)->nullable(false)->unique();
             $table->string('address', 200)->nullable(false);
             $table->string('phone', 20)->nullable(false);
-            $table->float('starts')->nullable(false)->default(0.0);
+            $table->integer('star')->nullable(false)->default(0);
             $table->timestamp('check_in_time')->nullable(false)->useCurrent();
             $table->timestamp('checkout_time')->nullable(false)->useCurrent();
             $table->timestamps();

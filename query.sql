@@ -1,2 +1,3 @@
 -- Active: 1730444214304@@127.0.0.1@3306
 DESC hotels;
+SELECT * FROM hotels;
