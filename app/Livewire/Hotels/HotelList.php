@@ -11,6 +11,8 @@ class HotelList extends Component
 {
     #[Title('Hotels')]
 
+    public $search;
+
     public function delete(int $id)
     {
         $hotel = Hotel::findOrFail($id);
@@ -20,7 +22,9 @@ class HotelList extends Component
     public function render()
     {
         return view('livewire.hotels.hotel-list', [
-            'hotels' => Hotel::all()
+            'hotels' => Hotel::where('name', 'LIKE', "%$this->search%")
+                ->orWhere('address', 'LIKE', "%$this->search%")
+                ->orWhere('email', 'LIKE', "%$this->search%")->get()
         ]);
     }
 }

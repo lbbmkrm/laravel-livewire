@@ -3,6 +3,7 @@
 namespace App\Livewire\Hotels;
 
 use App\Models\Hotel;
+use Carbon\Carbon;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
@@ -42,8 +43,8 @@ class HotelUpdate extends Component
         $this->phone = $this->hotel->phone;
         $this->address = $this->hotel->address;
         $this->star = $this->hotel->star;
-        $this->check_in_time = $this->hotel->check_in_time;
-        $this->checkout_time = $this->hotel->checkout_time;
+        $this->check_in_time = Carbon::parse($this->hotel->check_in_time)->format('Y-m-d\TH:i');
+        $this->checkout_time = Carbon::parse($this->hotel->checkout_time)->format('Y-m-d\TH:i');
     }
 
     public function update()
