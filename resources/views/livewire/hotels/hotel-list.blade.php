@@ -53,7 +53,10 @@
                     <td>{{ $hotel->star }}</td>
                     <td class="d-flex gap-1">
                       <a wire:navigate href="{{ route('hotel.update',$hotel->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                      <a wire:navigate href="" class="btn btn-danger btn-sm">Delete</a>
+                      <button wire:click='delete({{ $hotel->id }})'
+                        wire:confirm='Are you sure to delete this list!'
+                        class="btn btn-danger btn-sm">Delete
+                      </button>
                     </td>
                   </tr>
                   @endforeach
