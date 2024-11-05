@@ -6,9 +6,12 @@ use App\Models\Hotel;
 use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\Title;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class HotelList extends Component
 {
+    use WithPagination;
+
     #[Title('Hotels')]
 
     public $search;
@@ -24,7 +27,7 @@ class HotelList extends Component
         return view('livewire.hotels.hotel-list', [
             'hotels' => Hotel::where('name', 'LIKE', "%$this->search%")
                 ->orWhere('address', 'LIKE', "%$this->search%")
-                ->orWhere('email', 'LIKE', "%$this->search%")->get()
+                ->orWhere('email', 'LIKE', "%$this->search%")->paginate(5)
         ]);
     }
 }

@@ -64,6 +64,7 @@
                   @endforeach
                 </tbody>
               </table>
+              <div>{{ $hotels->links() }}</div>
               <!-- End Default Table Example -->
             </div>
           </div>
