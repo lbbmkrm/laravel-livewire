@@ -13,7 +13,7 @@
               <div class="card-title">
                 <div class="row">
                   <div class="col-5 d-flex align-items-end">
-                        <input class="form-control" type="text" wire:model.live.debounce.800ms='search' placeholder="Search..." >
+                    <input class="form-control" type="text" wire:model.live.debounce.800ms='search' placeholder="Search..." >
                   </div>
                   <div class="col-7 mt-2">
                     <div class="float-end">
