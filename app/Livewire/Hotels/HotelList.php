@@ -30,4 +30,9 @@ class HotelList extends Component
                 ->orWhere('email', 'LIKE', "%$this->search%")->paginate(5)
         ]);
     }
+
+    public function updatingSearch()
+    {
+        $this->gotoPage(1);
+    }
 }
